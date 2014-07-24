@@ -40,8 +40,8 @@ gulp.task('default', function() {
 });
 ```
 
-This is a over simplistic example. Generally the transform will be something that you want to implement in a separate
-package.
+Note that minification is an arbitrary and somewhat inappropriate example. You would normally be implementing something
+more specific that would be contained in a separate node package.
 
 ## Limitations
 
@@ -54,6 +54,10 @@ There are a number of other methods that are primarly of use where you wish to p
 The following example pushes 3 files, and a stream <code>end</code> event, directly to the readable stream.
 
 ```
+var through = require('through-pipes');
+var ngmin = require('gulp-ngmin');
+var uglify = require('gulp-uglify');
+
 through(function(readable) {
   return readable
     .pipe(ngmin())
@@ -71,30 +75,30 @@ through(function(readable) {
 
 ### input(...):self
 
-Bypass the through stream and directly push values to the internal input stream
+Bypass the through stream and directly push values to the internal input stream.
 
-`{...object}` Any number of objects to add to the input
+Any number of objects `{...object}` to add to the input.
 
-Returns `{stream.Through}` the through stream on which the method was called
+Returns `{stream.Through}` the through stream on which the method was called.
 
 ### end():self
 
 Bypass the through stream and directly push <code>null</code> to the internal input stream to trigger end.
 
-Returns `{stream.Through}` the through stream on which the method was called
+Returns `{stream.Through}` the through stream on which the method was called.
 
 ### output(method):self
 
 A convenience for `.on('data', method)`.
 
-`{function(string, function)}` The method to be called on the <code>data</code> event
+The method `{function(string, function)}` to be called on the <code>data</code> event.
 
-Returns `{stream.Through}` the through stream on which the method was called
+Returns `{stream.Through}` the through stream on which the method was called.
 
 ### done(method):self
 
 A convenience for `.on('end', method)`.
 
-`{function(string, function)}` The method to be called on the <code>end</code> event
+The method `{function(string, function)}` to be called on the <code>end</code> event.
 
-Returns `{stream.Through}` the through stream on which the method was called
+Returns `{stream.Through}` the through stream on which the method was called.
