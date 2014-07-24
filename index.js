@@ -6,7 +6,7 @@ var stream = require('stream');
  * @param {function(stream.Readable):stream.Readable} method A factory method that returns a stream
  * @returns {stream.Through} A through stream that wraps the pipe
  */
-module.exports = function throughPipes(method) {
+module.exports = function(method) {
   'use strict';
 
   // input to the stream
