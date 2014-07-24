@@ -51,7 +51,7 @@ Suitable for object streams only.
 
 There are a number of other methods that are primarly of use where you wish to push input explicitly to the subroutine.
 
-The following example pushes 3 files, and a stream <code>end</cod> event, directly to the readable stream.
+The following example pushes 3 files, and a stream <code>end</code> event, directly to the readable stream.
 
 ```
 through(function(readable) {
