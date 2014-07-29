@@ -102,7 +102,7 @@ Bypass the through stream and directly push `null` to the internal input stream 
 
 A convenience for `.on('data', method)`.
 
-@param `{function(string, function)}` method The method to be called on the `data` event.
+@param `{function(string, function)} method` The method to be called on the `data` event.
 
 @returns `{stream.Through}` The through stream on which the method was called.
 
@@ -110,6 +110,6 @@ A convenience for `.on('data', method)`.
 
 A convenience for `.on('end', method)`.
 
-@param `{function(string, function)}` method The method to be called on the `end` event.
+@param `{function(string, function)} method` The method to be called on the `end` event.
 
 @returns `{stream.Through}` The through stream on which the method was called.
