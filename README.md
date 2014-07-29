@@ -5,7 +5,7 @@
 
 ## Install
 
-Install with [npm](https://npmjs.org/package/gulp-traceur-out).
+Install with [npm](https://npmjs.org/package/through-pipes).
 
 ```
 npm install --save-dev through-pipes
