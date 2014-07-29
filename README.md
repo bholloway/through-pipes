@@ -43,11 +43,8 @@ gulp.task('default', function() {
 Note that minification is an arbitrary and somewhat inappropriate example. You would normally be implementing something
 more specific that would be contained in a separate node package.
 
-## Limitations
-
-Suitable for object streams only.
-
-## Usage
+Other than the top-level factory method, there are a number of other methods that may be used to push input explicitly
+to the subroutine.
 
 The following example pushes 3 files, and a stream <code>end</code> event, directly to the readable stream.
 
@@ -71,10 +68,11 @@ through(function(readable) {
 .end();
 ```
 
-## Reference
+## Limitations
 
-Other than the top-level factory method, there are a number of other methods that may be used to push input explicitly
-to the subroutine.
+Suitable for object streams only.
+
+## Reference
 
 ### (method)
 
