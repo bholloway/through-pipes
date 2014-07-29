@@ -73,7 +73,16 @@ through(function(readable) {
 
 ## Reference
 
-There are a number of other methods that are primarily of use where you wish to push input explicitly to the subroutine.
+Other than the top-level factory method, there are a number of other methods that may be used to push input explicitly
+to the subroutine.
+
+### (method)
+
+Creates a new instance.
+
+@param `{function(stream.Readable):stream.Readable} method` A factory method that returns a stream
+
+@returns `{stream.Through}` A through stream that wraps the pipe
 
 ### .input(...)
 
@@ -81,26 +90,26 @@ Bypass the through stream and directly push values to the internal input stream.
 
 @param `{...object}` Any number of objects to add to the input.
 
-@returns `{stream.Through}` the through stream on which the method was called.
+@returns `{stream.Through}` The through stream on which the method was called.
 
 ### .end()
 
 Bypass the through stream and directly push `null` to the internal input stream to trigger end.
 
-@returns `{stream.Through}` the through stream on which the method was called.
+@returns `{stream.Through}` The through stream on which the method was called.
 
-### output(method)
+### .output(method)
 
 A convenience for `.on('data', method)`.
 
 @param `{function(string, function)}` method The method to be called on the `data` event.
 
-@returns `{stream.Through}` the through stream on which the method was called.
+@returns `{stream.Through}` The through stream on which the method was called.
 
-### done(method):self
+### .done(method)
 
 A convenience for `.on('end', method)`.
 
 @param `{function(string, function)}` method The method to be called on the `end` event.
 
-@returns `{stream.Through}` the through stream on which the method was called.
+@returns `{stream.Through}` The through stream on which the method was called.
